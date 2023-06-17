@@ -1,5 +1,5 @@
 services:
-  app:
+  web:
     container_name: my_app_name
     build: 
       context: .
@@ -9,6 +9,7 @@ services:
       - .env.local
     volumes:
       - ./:/app
+      - /app/node_modules
     command: npm run dev
     ports:
       - "3000:3000"
